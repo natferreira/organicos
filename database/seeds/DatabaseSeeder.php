@@ -39,8 +39,8 @@ class PermissionsTableSeeder extends Seeder {
         DB::table('permissions')->delete();
 
         $permission1a = Permission::create([
-            'name'=>'View-Painel-Administrativo',
-            'label'=>'Pode entrar no painel de Administração!',
+            'name'=>'View-Painel',
+            'label'=>'Pode entrar no painel!',
             'grupo'=>1,
         ]);
         $permission1b = Permission::create([
@@ -90,27 +90,6 @@ class PermissionsTableSeeder extends Seeder {
             'label'=>'Pode Deletar Funções!',
             'grupo'=>1,
         ]);
-        //----------------------------------------------------------------------------Metas
-        $permission4a = Permission::create([
-            'name'=>'View-Metas',
-            'label'=>'Pode Visualizar Metas!',
-            'grupo'=>2,
-        ]);
-        $permission4b = Permission::create([
-            'name'=>'Store-Metas',
-            'label'=>'Pode Criar Metas!',
-            'grupo'=>2,
-        ]);
-        $permission4c = Permission::create([
-            'name'=>'Update-Metas',
-            'label'=>'Pode Editar Metas!',
-            'grupo'=>2,
-        ]);
-        $permission4d = Permission::create([
-            'name'=>'Destroy-Metas',
-            'label'=>'Pode Deletar Metas!',
-            'grupo'=>2,
-        ]);
         //............
         //$syncPermission1 = $permission1b->roles()->sync([2, 3, 4]); //Liberando painel Plano padrão 1
     }
@@ -123,69 +102,12 @@ class UserTableSeeder extends Seeder {
 
         $user = \App\User::create([
             'name'=>'Administrador',
-            'email'=>env('MAIL_USERNAME'),
-            'password'=>bcrypt('administrador'),
+            'email'=>'admin@shieldforce',
+            'password'=>bcrypt('admin'),
         ]);
 
         event(new RegisterUser($user, 1));
-
         //------------------------------------------------------
-    }
-
-}
-
-class EstadoTableSeeder extends Seeder {
-
-    public function run()
-    {
-        DB::table('estado')->delete();
-
-        // Note: these dump files must be generated with DELETE (or TRUNCATE) + INSERT statements
-        $sql = file_get_contents('public/CorreiosP/EstadosMod.sql');
-
-        // split the statements, so DB::statement can execute them.
-        $statements = array_filter(array_map('trim', explode(';', $sql)));
-
-        foreach ($statements as $stmt) {
-            DB::statement($stmt);
-        }
-    }
-
-}
-
-class MunicipioTableSeeder extends Seeder {
-
-    public function run()
-    {
-        DB::table('municipio')->delete();
-
-        // Note: these dump files must be generated with DELETE (or TRUNCATE) + INSERT statements
-        $sql = file_get_contents('public/CorreiosP/MunicipiosMod.sql');
-
-        // split the statements, so DB::statement can execute them.
-        $statements = array_filter(array_map('trim', explode(';', $sql)));
-
-        foreach ($statements as $stmt) {
-            DB::statement($stmt);
-        }
-    }
-
-}
-class BairroTableSeeder extends Seeder {
-
-    public function run()
-    {
-        DB::table('bairro')->delete();
-
-        // Note: these dump files must be generated with DELETE (or TRUNCATE) + INSERT statements
-        $sql = file_get_contents('public/CorreiosP/BairrosMod.sql');
-
-        // split the statements, so DB::statement can execute them.
-        $statements = array_filter(array_map('trim', explode(';', $sql)));
-
-        foreach ($statements as $stmt) {
-            DB::statement($stmt);
-        }
     }
 
 }

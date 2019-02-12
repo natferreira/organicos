@@ -18,6 +18,27 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        'App\Events\RegisterUser' => [
+            'App\Listeners\SyncRoleRegisterUser',
+        ],
+        'App\Events\UpdateUser' => [
+            'App\Listeners\SyncRoleUpdateUser',
+        ],
+        'App\Events\DeleteUser' => [
+            'App\Listeners\ClearCacheDeleteUser',
+        ],
+        'App\Events\RegisterRole' => [
+            'App\Listeners\SyncPermissionsRegisterRole',
+        ],
+        'App\Events\UpdateRole' => [
+            'App\Listeners\SyncPermissionsUpdateRole',
+        ],
+        'App\Events\DeleteRole' => [
+            'App\Listeners\SyncPermissionsDeleteRole',
+        ],
+        'App\Events\UpdatePermission' => [
+            'App\Listeners\SyncRolesUpdatePermission',
+        ],
     ];
 
     /**

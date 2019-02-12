@@ -11,7 +11,8 @@ class Permission extends Model
 
     protected $fillable = [
         'name',
-        'label'
+        'label',
+        'grupo'
     ];
     //------------------------------------------------------------------------------------------------------------------
     //------------------------------------------------------------------------------------------------------------------
@@ -20,6 +21,7 @@ class Permission extends Model
         $permission =  $this->find($request->id);
         $permission->name = $request['name'];
         $permission->label = $request['label'];
+        $permission->grupo = $request['grupo'];
         $permission->save();
         if($permission)
         {
