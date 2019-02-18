@@ -12,6 +12,7 @@ Esse repositório foi construído para ajudar a equipe de desenvolvimento shield
 - Digite o seguinte comando no GitBash : [git clone https://github.com/Shieldforce/base-shieldforce.git] .
 - Assin que o repositório terminar de baixar dê o próximo comando: [composer update].
 - Depois Copie o arquivo .env.example e renomeie para .env.
+- Crie seu banco de dados.
 - Configure seu arquivo .env com os dados do seu host.
 - Gerar a Key com o comando [php artisan key:generate].
 - Logo após dê o comando no GitBash : [php artisan migrate].
