@@ -11,11 +11,8 @@
 |
 */
 
-Route::group(['namespace'=>'Home'], function () {
-    $this->get('/Repositorio', function (){
-        return view('Repositorio.Principal.index');
-    })->name('Repositorio.Principal.index'); // View para instalação do repositório!!
-    $this->get('/', 'HomeController@index')->name('Home.Principal.index');
+Route::group(['namespace'=>'Site'], function () {
+    $this->get('/', 'SiteController@index')->name('Site.Principal.index');
 });
 
 Auth::routes();
