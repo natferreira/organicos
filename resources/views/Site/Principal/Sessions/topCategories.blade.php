@@ -1,6 +1,6 @@
 <!-- Start Top Categories -->
 <section class="container padding-top-3x">
-    <h3 class="text-center mb-30">Top Categories</h3>
+    <h3 class="text-center mb-30">Top Categorias</h3>
     <div class="row">
         <div class="col-md-4 col-sm-6 home-cat">
             <div class="card">

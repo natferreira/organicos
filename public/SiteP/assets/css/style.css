@@ -70,7 +70,7 @@
     display: block;
     padding: 5px 20px !important;
     transition: color .3s;
-    color: #606975;
+    color:	#A8B10A;
     font-size: 14px;
     font-weight: 500;
     text-align: left;
@@ -128,11 +128,11 @@
 }
 
 .sub-menu > li:hover > a, .toolbar-dropdown > li:hover > a {
-    color: #fa6800
+    color: 	#C65543
 }
 
 .sub-menu > li.active > a, .toolbar-dropdown > li.active > a {
-    color: #fa6800
+    color: 	#C65543
 }
 
 .sub-menu > li.has-children > a, .toolbar-dropdown > li.has-children > a {
@@ -456,7 +456,7 @@ a:focus {
 }
 
 img, figure {
-    max-width: 100%;
+    /*max-width: 100%;*/
     height: auto;
     vertical-align: middle
 }
@@ -2738,16 +2738,6 @@ button:focus {
     color: #fff
 }
 
-.twitter-btn {
-    border-color: #55acee;
-    background-color: transparent;
-    color: #55acee
-}
-
-.twitter-btn:hover {
-    background-color: #55acee;
-    color: #fff
-}
 
 .google-btn {
     border-color: #dd4b39;
@@ -2774,14 +2764,14 @@ button:focus {
     margin-right: 10px;
     margin-bottom: 5px;
     transition: color .3s;
-    color: #606975;
+    color: #fff;
     font-size: 13px;
     text-decoration: none;
     vertical-align: middle
 }
 
 .soc-border {
-    border-left: 1px solid #e1e7ec;
+    border-left: 1px solid #fff;
     padding: 4px 0 4px 12px;
 }
 
@@ -2887,7 +2877,7 @@ button:focus {
 }
 
 .sb-facebook:hover, .sb-facebook:focus {
-    color: #3b5998 !important
+    color: #C65543 !important
 }
 
 .sb-flickr:hover, .sb-flickr:focus {
@@ -2911,7 +2901,7 @@ button:focus {
 }
 
 .sb-instagram:hover, .sb-instagram:focus {
-    color: #3f729b !important
+    color: #C65543 !important
 }
 
 .sb-lastfm {
@@ -2920,10 +2910,6 @@ button:focus {
 
 .sb-lastfm:hover, .sb-lastfm:focus {
     color: #e31b23 !important
-}
-
-.sb-linkedin:hover, .sb-linkedin:focus {
-    color: #0976b4 !important
 }
 
 .sb-odnoklassniki {
@@ -2996,10 +2982,6 @@ button:focus {
 
 .sb-twitch:hover, .sb-twitch:focus {
     color: #6441a5 !important
-}
-
-.sb-twitter:hover, .sb-twitter:focus {
-    color: #55acee !important
 }
 
 .sb-vimeo:hover, .sb-vimeo:focus {
@@ -5751,7 +5733,7 @@ video {
     height: 40px;
     padding: 0 30px;
     border-bottom: 1px solid #e1e7ec;
-    background-color: #f5f5f5;
+    background-color: #A8B10A;
     z-index: 9010
 }
 
@@ -5770,7 +5752,7 @@ video {
 }
 
 .topbar .topbar-column a:not(.social-button), .topbar .topbar-column span, .topbar .topbar-column p {
-    color: #606975;
+    color: #fff;
     font-size: 13px
 }
 
@@ -5794,7 +5776,7 @@ video {
 }
 
 .topbar .topbar-column a:not(.social-button):hover {
-    color: #fa6800
+    color: #C65543
 }
 
 .topbar .topbar-column:last-child > a:not(.social-button), .topbar .topbar-column:last-child > span, .topbar .topbar-column:last-child > p {
@@ -6032,13 +6014,12 @@ video {
 
 .site-logo {
     width: 154px;
-    padding: 12px 0 12px 25px;
+    padding: 0 0 0 25px;
     text-decoration: none
 }
 
 .site-logo > img {
     display: block;
-    width: 100%
 }
 
 .site-logo.logo-stuck {
@@ -6057,7 +6038,7 @@ video {
     width: 74px;
     transition: color .3s;
     border-right: 1px solid #e1e7ec;
-    color: #606975;
+    color: #A8B10A;
     font-size: 20px;
     line-height: 1;
     text-align: center;
@@ -6071,7 +6052,7 @@ video {
 }
 
 .offcanvas-toggle:hover {
-    color: #fa6800
+    color: #C65543
 }
 
 .offcanvas-toggle.menu-toggle {
@@ -6097,18 +6078,18 @@ video {
 .site-menu ul > li > a {
     padding: 0 15px;
     transition: color .3s;
-    color: #606975;
+    color:  #C65543;
     font-size: 14px;
     font-weight: 500;
     text-decoration: none
 }
 
 .site-menu ul > li:hover > a {
-    color: #fa6800
+    color: 	#A8B10A
 }
 
 .site-menu ul > li.active > a {
-    color: #fa6800
+    color: 	#C65543
 }
 
 .site-menu > ul {
@@ -6138,7 +6119,7 @@ video {
 }
 
 .site-menu > ul > li.active > a {
-    border-top-color: #fa6800
+    border-top-color: 	#C65543
 }
 
 .site-menu ul > li:hover > .sub-menu {
@@ -6188,9 +6169,9 @@ video {
     height: 44px;
     margin-left: 6px;
     transition: background-color .35s;
-    border: 1px solid #e1e7ec;
+    border: 1px solid #A8B10A;
     border-radius: 50%;
-    color: #606975;
+    color: #C65543;
     font-size: 17px;
     cursor: pointer;
     vertical-align: middle;
@@ -6213,7 +6194,7 @@ video {
 }
 
 .toolbar .search:hover, .toolbar .account:hover, .toolbar .cart:hover {
-    background-color: #f5f5f5
+    background-color: #f8fff8
 }
 
 .toolbar .account > a::after, .toolbar .cart > a::after {
@@ -6703,8 +6684,9 @@ video {
 23. Footer Styles
 --------------------------------------------*/
 .site-footer {
-    padding-top: 72px;
-    background-color: #374250
+    margin-top: 100px;
+    padding-top: 60px;
+    background-color: #C25548
 }
 
 .site-footer .widget .text-white i {
@@ -7802,7 +7784,7 @@ video {
 28. Inner Styles
 --------------------------------------------*/
 .home-1-hero {
-    background-image: url(../images/hero-slider/main-bg.jpg);
+    background-image: url(../images/hero-slider/organicos3.JPG);
 }
 
 .home-1-hero-item {

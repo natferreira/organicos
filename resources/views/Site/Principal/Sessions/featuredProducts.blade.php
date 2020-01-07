@@ -1,6 +1,6 @@
 <!-- Start Featured Products -->
 <section class="container padding-top-3x padding-bottom-3x">
-    <h3 class="text-center mb-30">Featured Products</h3>
+    <h3 class="text-center mb-30">Nossos Produtos</h3>
     <div class="owl-carousel"
             data-owl-carousel='{"nav": false, "dots": false, "margin": 30, "responsive": {"0":{"items":1},"576":{"items":2},"768":{"items":3},"991":{"items":4},"1200":{"items":4}} }'>
         <!-- Start Product #1 -->
