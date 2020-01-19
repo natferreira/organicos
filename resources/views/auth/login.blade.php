@@ -1,73 +1,99 @@
-@extends('auth.Template.index')
+@extends('Site.Template.index')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+<!-- Start Page Title -->
+<div class="page-title">
+    <div class="container">
+        <div class="column">
+            <h1>Login & Register</h1>
+        </div>
+        <div class="column">
+            <ul class="breadcrumbs">
+                <li><a href="index.html">Home</a></li>
+                <li class="separator">&nbsp;</li>
+                <li>Login & Register</li>
+            </ul>
         </div>
     </div>
 </div>
+<!-- End Page Title -->
+<!-- Start Account Access -->
+<div class="container padding-top-1x padding-bottom-3x">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="login-box" action="{{ route('login') }}" method="post">
+                {{ csrf_field() }}
+                <h4 class="margin-bottom-1x">Sign in with a Social Account</h4>
+                <div class="row margin-bottom-1x">
+                    <div class="col-xl-4 col-md-6 col-sm-4"><a class="btn btn-sm btn-block facebook-btn" href="#"><i class="socicon-facebook"></i>&nbsp;Facebook login</a></div>
+                    <div class="col-xl-4 col-md-6 col-sm-4"><a class="btn btn-sm btn-block twitter-btn" href="#"><i class="socicon-twitter"></i>&nbsp;Twitter login</a></div>
+                    <div class="col-xl-4 col-md-6 col-sm-4"><a class="btn btn-sm btn-block google-btn" href="#"><i class="socicon-googleplus"></i>&nbsp;Google+ login</a></div>
+                </div>
+                <h4 class="margin-bottom-1x">Or using form below</h4>
+                <div class="form-group input-group">
+                    <input class="form-control" type="email" placeholder="Enter E-Mail" name="email" required><span class="input-group-addon"><i class="icon-mail"></i></span>
+                </div>
+                <div class="form-group input-group">
+                    <input class="form-control" type="password" placeholder="Enter Password" name="password" required><span class="input-group-addon"><i class="icon-lock"></i></span>
+                </div>
+                <div class="d-flex flex-wrap justify-content-between padding-bottom-1x">
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" id="remember_me" checked>
+                        <label class="custom-control-label" for="remember_me">Remember Me</label>
+                    </div><a class="navi-link" href="account-password-recovery.html">Forgot Password?</a>
+                </div>
+                <div class="text-center text-sm-right">
+                    <button class="btn btn-primary margin-bottom-none" type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="padding-top-3x hidden-md-up"></div>
+            <h3 class="margin-bottom-1x padding-top-1x">No Account? Register Here</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting ...</p>
+            <form class="row" method="post">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="reg-fn">First Name</label>
+                        <input class="form-control" type="text" id="reg-fn" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="reg-ln">Last Name</label>
+                        <input class="form-control" type="text" id="reg-ln" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="reg-email">E-Mail Address</label>
+                        <input class="form-control" type="email" id="reg-email" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="reg-phone">Phone Number</label>
+                        <input class="form-control" type="text" id="reg-phone" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="reg-pass">Password</label>
+                        <input class="form-control" type="password" id="reg-pass" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="reg-pass-confirm">Confirm Password</label>
+                        <input class="form-control" type="password" id="reg-pass-confirm" required>
+                    </div>
+                </div>
+                <div class="col-12 text-center text-sm-right">
+                    <button class="btn btn-primary margin-bottom-none" type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Account Access -->
 @endsection
