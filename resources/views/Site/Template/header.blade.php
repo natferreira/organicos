@@ -43,7 +43,7 @@
                 <div class="search"><i class="icon-search"></i></div>
                 <!-- Start Account -->
                 <div class="account">
-                    <a href="{{ route('login') }}"></a><i class="icon-head"></i>
+                    <i class="icon-head"></i>
                     @if(auth()->check())
                     <ul class="toolbar-dropdown">
                         <li class="sub-menu-user">
@@ -60,6 +60,11 @@
                         <li><a href="account-orders.html">Meus Pedidos</a></li>
                         <li class="sub-menu-separator"></li>
                         <li><a href="{{ route('logout') }}"><i class="fa fa-lock"></i> Sign Out</a></li>
+                    </ul>
+                    @else
+                    <ul class="toolbar-dropdown">
+                        <li><a href="{{ route('login') }}">ENTRAR</a></li>
+                        <li><a href="{{ route('register') }}">CADASTRE-SE</a></li>
                     </ul>
                     @endif
                 </div>

@@ -1,3 +1,9 @@
+@extends('Site.Template.index')
+
+@section('content')
+
+@includeIf('Site.Encomenda.Endereco.Sessions.titulo')
+
 <!-- Start Checkout Content -->
 <div class="container padding-top-1x padding-bottom-3x">
     <div class="row">
@@ -11,20 +17,20 @@
             </div>
             <h4>Billing Address</h4>
             <hr class="padding-bottom-1x">
-            @if($endereco != '0')
-            <form action="{{route('endereco.update', $endereco->id)}}" method="post">
             
+            <form action="{{ route('endereco.store') }}" method_field="POST">
+                {{ csrf_field() }}
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-fn">Logradouro</label>
-                            <input class="form-control" type="text" id="checkout-fn" name="rua" value="{{$endereco->rua}}" disabled>
+                            <input class="form-control" type="text" id="checkout-fn" name="rua">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-ln">Número</label>
-                            <input class="form-control" type="text" id="checkout-ln" name="numero" value="{{$endereco->numero}}" disabled>
+                            <input class="form-control" type="text" id="checkout-ln" name="numero">
                         </div>
                     </div>
                 </div>
@@ -32,15 +38,17 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-email">Complemento</label>
-                            <input class="form-control" type="text" id="checkout-email" name="complemento" value="{{$endereco->complemento}}" disabled>
+                            <input class="form-control" type="text" id="checkout-email" name="complemento">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-country">Bairro</label>
-                            <select class="form-control" id="checkout-country" name="bairro_id" disabled>
-                                <option value="" selected>{{$bairro->nome}}</option>
-                                
+                            <select class="form-control" id="checkout-country" name="bairro_id">
+                                <option value="" selected>Selecione o Bairro</option>
+                                @foreach($bairros as $bairro)
+                                    <option value="{{$bairro->id}}">{{$bairro->nome}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -49,16 +57,21 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-city">Cidade</label>
-                            <select class="form-control" id="checkout-city" name="cidade_id" disabled>
-                                <option value="" selected>{{$cidade->nome}}</option>
+                            <select class="form-control" id="checkout-city" name="cidade_id">
+                                <option value="" selected>Selecione a Cidade</option>
+                                @foreach($cidades as $cidade)
+                                    <option value="{{$cidade->id}}">{{$cidade->nome}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-country">Estado</label>
-                            <select class="form-control" id="checkout-country" name="estado_id" disabled>
-                                <option value="" selected>{{$estado->nome}}</option>
+                            <select class="form-control" id="checkout-country" name="estado_id">
+                            @foreach($estados as $estado)
+                                <option value="{{$estado->id}}" selected>{{$estado->nome}}</option>
+                            @endforeach
                             </select>
                         </div>
                     </div>
@@ -66,14 +79,9 @@
                 
                 <div class="checkout-footer">
                     <div class="column"><a class="btn btn-outline-secondary" href="cart.html"><i class="icon-arrow-left"></i><span class="hidden-xs-down">&nbsp;Back To Cart</span></a></div>
-                    <div class="column center"><a class="btn btn-info" href="{{route('endereco.edit', $endereco->id)}}"><span class="hidden-xs-down">Trocar Endereço&nbsp;</span></a></div>
                     <div class="column"><button type="submit" class="btn btn-primary" href=""><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></button></div>
                 </div>
             </form>
-            @else
-            <h4>Você ainda não tem um endereço de entrega cadastrado!</h4>
-            <div class="column"><a class="btn btn-primary" href="{{ route('endereco.create') }}"><span class="hidden-xs-down">Cadastrar&nbsp;</span><i class="icon-arrow-right"></i></a></div>
-            @endif
         </div>
         <!-- End Checkout Address -->
         <!-- Start Sidebar -->
@@ -116,3 +124,5 @@
     </div>
 </div>
 <!-- End Product Content -->
+
+@endsection

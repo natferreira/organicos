@@ -4,17 +4,18 @@ namespace App\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Cesta;
+use App\User;
+use App\Models\Endereco;
+use App\Models\Bairro;
+use App\Models\Cidade;
+use App\Models\Estado;
 
 class EncomendaSiteController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware('auth');
-    }
-
-    public function endereco()
-    {
-        return view('Site.Encomenda.Endereco.index');
+        $this->middleware('auth');
     }
 
     public function frete()

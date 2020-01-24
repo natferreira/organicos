@@ -15,6 +15,10 @@ class DatabaseSeeder extends Seeder
         $this->call('RolesTableSeeder');
         $this->call('PermissionsTableSeeder');
         $this->call('UserTableSeeder');
+        $this->call('ProdutosTableSeeder');
+        $this->call('EstadosTableSeeder');
+        $this->call('CidadesTableSeeder');
+        $this->call('BairrosTableSeeder');
     }
 }
 class RolesTableSeeder extends Seeder {
@@ -100,14 +104,119 @@ class UserTableSeeder extends Seeder {
     {
         DB::table('users')->delete();
 
-        $user = \App\User::create([
+        $userAdmin = \App\User::create([
             'name'=>'Administrador',
             'email'=>'admin@shieldforce',
             'password'=>bcrypt('admin'),
         ]);
 
-        event(new RegisterUser($user, 1));
+        $user = \App\User::create([
+            'name'=>'Natália',
+            'email'=>'natalia@somosorganicos',
+            'password'=>bcrypt('natalia'),
+        ]);
+
+        $user = \App\User::create([
+            'name'=>'Ana',
+            'email'=>'ana@somosorganicos',
+            'password'=>bcrypt('ana'),
+        ]);
+
+        $user = \App\User::create([
+            'name'=>'Júlia',
+            'email'=>'julia@somosorganicos',
+            'password'=>bcrypt('julia'),
+        ]);
+
+        event(new RegisterUser($userAdmin, 1));
         //------------------------------------------------------
     }
 
+}
+
+class ProdutosTableSeeder extends Seeder {
+    
+    public function run()
+    {
+        DB::table('produtos')->delete();
+
+        $produto = \App\Models\Produto::create([
+            'nome'=>'Laranja Lima',
+            'descricao'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'preco'=> 10.90,
+            'imagem'=>'01',
+            'quantidade'=>20,
+        ]);
+
+        $produto = \App\Models\Produto::create([
+            'nome'=>'Banana Prata',
+            'descricao'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'preco'=> 12.90,
+            'imagem'=>'05',
+            'quantidade'=>30,
+        ]);
+
+        $produto = \App\Models\Produto::create([
+            'nome'=>'Morango',
+            'descricao'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'preco'=> 15.90,
+            'imagem'=>'07',
+            'quantidade'=>30,
+        ]);
+
+        $produto = \App\Models\Produto::create([
+            'nome'=>'Cenoura',
+            'descricao'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'preco'=> 16.90,
+            'imagem'=>'08',
+            'quantidade'=>30,
+        ]);
+    }
+}
+
+class EstadosTableSeeder extends Seeder {
+
+    public function run()
+    {
+        DB::table('estados')->delete();
+
+        $estado = \App\Models\Estado::create([
+            'nome' => 'Rio de Janeiro',
+            'sigla' => 'RJ'
+        ]);
+    }
+}
+
+class CidadesTableSeeder extends Seeder {
+    
+    public function run()
+    {
+        DB::table('cidades')->delete();
+
+        $cidade = \App\Models\Cidade::create([
+            'nome' => 'Duque de Caxias'
+        ]);
+
+        $cidade = \App\Models\Cidade::create([
+            'nome' => 'Rio de Janeiro'
+        ]);
+    }
+}
+
+class BairrosTableSeeder extends Seeder {
+    
+    public function run()
+    {
+        DB::table('bairros')->delete();
+
+        $bairro = \App\Models\Bairro::create([
+            'nome' => 'Vila São Luiz'
+        ]);
+        $bairro = \App\Models\Bairro::create([
+            'nome' => 'Jardim 25 de agosto'
+        ]);
+        $bairro = \App\Models\Bairro::create([
+            'nome' => 'Itatiaia'
+        ]);
+    }
 }

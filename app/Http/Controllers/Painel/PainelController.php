@@ -20,6 +20,6 @@ class PainelController extends Controller
         {
             return view('Painel.Principal.index');
         }
-        return back()->with('error', 'Acesso Negado!');
+        return redirect()->route('Site.Principal.index');
     }
 }

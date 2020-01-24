@@ -1,76 +1,59 @@
-@extends('auth.Template.index')
+@extends('Site.Template.index')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+<!-- Start Page Title -->
+<div class="page-title">
+    <div class="container">
+        <div class="column">
+            <h1>Register</h1>
+        </div>
+        <div class="column">
+            <ul class="breadcrumbs">
+                <li><a href="index.html">Home</a></li>
+                <li class="separator">&nbsp;</li>
+                <li>Register</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Page Title -->
+<!-- Start Account Access -->
+<div class="container padding-top-1x padding-bottom-3x">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="padding-top-3x hidden-md-up"></div>
+            <h3 class="margin-bottom-1x padding-top-1x">No Account? Register Here</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting ...</p>
+            <form class="row" action="{{ route('register') }}" method="POST">
+                {{ csrf_field() }}
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="reg-fn">Nome</label>
+                        <input class="form-control" type="text" id="reg-fn" name="name" required>
+                    </div>
                 </div>
-            </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="reg-email">Email</label>
+                        <input class="form-control" type="email" id="reg-email" name="email" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="reg-pass">Senha</label>
+                        <input class="form-control" type="password" id="reg-pass" name="password" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="reg-pass-confirm">Confirm Password</label>
+                        <input class="form-control" type="password" id="reg-pass-confirm" required>
+                    </div>
+                </div>
+                <div class="col-12 text-center text-sm-right">
+                    <button class="btn btn-primary margin-bottom-none" type="submit">Register</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
