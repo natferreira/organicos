@@ -59,7 +59,7 @@
                         <li><a href="account-profile.html">Meu Perfil</a></li>
                         <li><a href="account-orders.html">Meus Pedidos</a></li>
                         <li class="sub-menu-separator"></li>
-                        <li><a href="{{ route('logout') }}"><i class="fa fa-lock"></i> Sign Out</a></li>
+                        <li><a href="{{ route('logout') }}"><i class="fa fa-lock"></i> SAIR</a></li>
                     </ul>
                     @else
                     <ul class="toolbar-dropdown">

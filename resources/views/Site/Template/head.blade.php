@@ -3,11 +3,11 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="author" content="">
-<title>Inspina | Universal E-Commerce HTML Template</title>
+<title>Somos Orgânicos</title>
 <!-- Mobile Specific Meta Tag -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="{{asset('SiteP/assets')}}/images/favicon.ico">
+<link rel="icon" type="image/x-icon" href="{{asset('SiteP/assets')}}/images/favicon.png">
 <!-- Bootsrap CSS -->
 <link rel="stylesheet" media="screen" href="{{asset('SiteP/assets')}}/css/bootstrap.min.css">
 <!-- Font Awesome CSS -->

@@ -2,7 +2,10 @@
 <div class="container padding-top-1x padding-bottom-3x">
     
     <div class="alert alert-info alert-dismissible fade show text-center margin-bottom-1x"><span class="alert-close" data-dismiss="alert"></span>
-        <p><i class="fa fa-bell"></i> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ...</p>
+        <p><i class="fa fa-bell"></i> ATENÇÃO:</p>
+        <p>O pagamento é efetuado somente no ato da entrega!</p>
+        <p>O valor mínimo para encomenda é R$50,00.</p>
+        <p>A entrega é realizada somente às terças-feiras!</p>
     </div>        
     <div class="table-responsive shopping-cart">
         <table class="table">
@@ -12,8 +15,7 @@
                 <th class="text-center">Quantidade</th>
                 <th class="text-center">Subtotal</th>
                 <th class="text-center">
-                    Remover
-                    <!--<a class="btn btn-sm btn-outline-danger" href="">Empty Cart</a>-->
+                    <a class="btn btn-sm btn-outline-danger" href="{{route('limpar.cesta')}}">Limpar Cesta</a>
                 </th>
             </tr>
             </thead>
@@ -42,7 +44,7 @@
                 </td>
             </tr>
             @empty
-                <p>Nenhum item no carrinho!</p>
+                <p class="text-center">Nenhum item na cesta!</p>
             @endforelse
             </tbody>
         </table>
@@ -52,15 +54,15 @@
     </div>
     <div class="shopping-cart-footer">
         <div class="column">
-            <a class="btn btn-outline-secondary" href="{{route('Site.Produtos.index')}}"><i class="icon-arrow-left"></i>&nbsp;Voltar para a lista de produtos!</a>
+            <a class="btn btn-outline-secondary" href="{{route('Site.Produtos.index')}}"><i class="icon-arrow-left"></i>&nbsp;Voltar para a lista de produtos</a>
         </div>
         @if(auth()->check())
         <div class="column">
-            <a class="btn btn-success" href="{{ route('endereco.index') }}">Finalizar Encomenda!</a>
+            <a class="btn btn-success" href="{{ route('endereco.index') }}">Finalizar Encomenda</a>
         </div>
         @else
         <div class="column">
-            <a class="btn btn-success" href="{{ route('login') }}">Finalizar Encomenda!</a>
+            <a class="btn btn-success" href="{{ route('login') }}">Finalizar Encomenda</a>
         </div>
         @endif
 

@@ -70,8 +70,8 @@ class Cesta extends Model
 
     public function limparCesta()
     {
-        //if( Session::has('cesta'))
-            //Session::forget('cesta');
+        if( Session::has('cesta'))
+            Session::forget('cesta');
         
     }
 

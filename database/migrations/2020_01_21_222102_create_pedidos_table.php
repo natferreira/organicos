@@ -18,7 +18,6 @@ class CreatePedidosTable extends Migration
             $table->unsignedInteger('produto_id');
             $table->integer('quantidade');
             $table->decimal('preco',10,2);
-            $table->decimal('total',10,2);
             $table->unsignedInteger('user_id');
             //----------------------------------------------------
             $table->foreign('produto_id')

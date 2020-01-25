@@ -23,5 +23,12 @@ class CestaSiteController extends Controller
         return view('Site.Cesta.index', compact('cesta','produtos'));
     }
 
+    public function limpar(Cesta $cesta)
+    {
+        $cesta->limparCesta();
+
+        return redirect()->route('Site.Cesta.index');
+    }
+
   
 }

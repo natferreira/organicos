@@ -87,7 +87,7 @@ class EnderecoController extends Controller
         $insert = $this->endereco->create($dataForm);
         if($insert)
         {
-            return redirect()->route('Site.Encomenda.Frete.index');
+           return redirect()->route('Site.Encomenda.Frete.index');
         }
         else
         {

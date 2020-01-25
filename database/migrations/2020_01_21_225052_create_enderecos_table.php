@@ -22,6 +22,8 @@ class CreateEnderecosTable extends Migration
             $table->integer('numero');
             $table->string('complemento');
             $table->unsignedInteger('estado_id');
+            $table->string('telefone1');
+            $table->string('telefone2')->nullable();
             //----------------------------------------------------
             $table->foreign('user_id')
                 ->references('id')
