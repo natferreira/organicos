@@ -889,7 +889,7 @@ h2.padding-top-1x.with-side {
 }
 
 .bg-primary {
-    background-color: #fa6800 !important
+    background-color: #C65543 !important
 }
 
 .bg-success {
@@ -941,7 +941,7 @@ h2.padding-top-1x.with-side {
 }
 
 .border-primary {
-    border-color: #fa6800 !important
+    border-color: #C65543 !important
 }
 
 .border-success {
@@ -1791,7 +1791,7 @@ kbd {
 }
 
 .form-control:focus {
-    border-color: #fa6800;
+    border-color: #C65543;
     outline: none;
     color: #606975;
     box-shadow: none !important
@@ -1909,7 +1909,7 @@ select.form-control.form-control-sm:not([size]):not([multiple]) {
 }
 
 .custom-control .custom-control-input:checked ~ .custom-control-label::before {
-    background-color: #fa6800
+    background-color: #C65543
 }
 
 .custom-control .custom-control-input:disabled ~ .custom-control-label {
@@ -2002,7 +2002,7 @@ select.form-control.form-control-sm:not([size]):not([multiple]) {
 }
 
 .input-group .form-control:focus ~ .input-group-addon {
-    color: #fa6800
+    color: #C65543
 }
 
 .input-group .input-group-btn {
@@ -2020,7 +2020,7 @@ select.form-control.form-control-sm:not([size]):not([multiple]) {
 }
 
 .input-group .input-group-btn button:hover {
-    color: #fa6800
+    color: #C65543
 }
 
 .input-group .input-group-btn .btn {
@@ -2154,7 +2154,7 @@ select.form-control.form-control-sm:not([size]):not([multiple]) {
     display: block;
     width: 100%;
     padding: 30px 24px;
-    border: 1px solid #e1e7ec;
+    border: 1px solid #fff;
     border-radius: 7px
 }
 
@@ -2485,7 +2485,7 @@ button:focus {
 }
 
 .btn-link-primary {
-    color: #fa6800
+    color: #C65543
 }
 
 .btn-link-primary:hover {
@@ -3527,8 +3527,8 @@ button:focus {
 }
 
 .pagination .pages > li.active > a {
-    border-color: #fa6811;
-    background-color: #fa6800;
+    border-color: #C65543;
+    background-color: #C65543;
     color: #fff
 }
 
@@ -3941,7 +3941,7 @@ a.list-group-item {
 }
 
 .badge.badge-primary {
-    background-color: #fa6800
+    background-color: #C65543
 }
 
 .badge.badge-info {
@@ -4116,7 +4116,7 @@ p.primary-alert {
 
 .alert-primary {
     background-color: rgba(13, 169, 239, 0.12);
-    color: #fa6800
+    color: #C65543
 }
 
 .alert-primary::before {
@@ -4124,11 +4124,11 @@ p.primary-alert {
 }
 
 .alert-primary > *:not(.text-white), .alert-primary > *:not(.text-light), .alert-primary h1:not(.text-white), .alert-primary h1:not(.text-light), .alert-primary h2:not(.text-white), .alert-primary h2:not(.text-light), .alert-primary h3:not(.text-white), .alert-primary h3:not(.text-light), .alert-primary h4:not(.text-white), .alert-primary h4:not(.text-light), .alert-primary h5:not(.text-white), .alert-primary h5:not(.text-light), .alert-primary h6:not(.text-white), .alert-primary h6:not(.text-light), .alert-primary p:not(.text-white), .alert-primary p:not(.text-light), .alert-primary ul:not(.text-white), .alert-primary ul:not(.text-light), .alert-primary ol:not(.text-white), .alert-primary ol:not(.text-light), .alert-primary a:not(.text-white), .alert-primary a:not(.text-light) {
-    color: #fa6800
+    color: #C65543
 }
 
 .alert-primary .alert-close {
-    color: #fa6800
+    color: #C65543
 }
 
 .alert-info {
@@ -6249,7 +6249,7 @@ video {
 }
 
 .toolbar-dropdown {
-    margin-top: 7px !important;
+    margin-top: 3px !important;
     text-align: left
 }
 
@@ -7133,8 +7133,8 @@ video {
 }
 
 .shop-view > a.active {
-    border-color: #fa6811;
-    background-color: #fa6800;
+    border-color: #C65543;
+    background-color: #C65543;
     cursor: default;
     pointer-events: none
 }

@@ -24,7 +24,7 @@
             <form class="login-box" action="{{ route('login') }}" method="post">
                 {{ csrf_field() }}
 
-                <h4 class="margin-bottom-1x">Login</h4>
+                <h4 class="margin-bottom-1x">Acesse sua conta e faça encomendas!</h4>
                 <div class="form-group input-group">
                     <input class="form-control" type="email" placeholder="e-mail" name="email" required><span class="input-group-addon"><i class="icon-mail"></i></span>
                 </div>
@@ -34,7 +34,7 @@
                 <div class="d-flex flex-wrap justify-content-between padding-bottom-1x">
                     <div class="custom-control custom-checkbox">
                         <input class="custom-control-input" type="checkbox" id="remember_me" checked>
-                        <label class="custom-control-label" for="remember_me">Remember Me</label>
+                        <label class="custom-control-label" for="remember_me">Lembrar-me</label>
                     </div><a class="navi-link" href="account-password-recovery.html">Esqueceu a senha?</a>
                 </div>
                 <div class="text-center text-sm-right">

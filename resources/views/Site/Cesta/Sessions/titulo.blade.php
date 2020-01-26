@@ -8,7 +8,7 @@
                 <ul class="breadcrumbs">
                     <li><a href="index.html">Home</a></li>
                     <li class="separator">&nbsp;</li>
-                    <li>Shopping Cart</li>
+                    <li>Sua Cesta</li>
                 </ul>
             </div>
         </div>

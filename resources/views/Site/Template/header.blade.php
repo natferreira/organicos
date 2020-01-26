@@ -47,11 +47,6 @@
                     @if(auth()->check())
                     <ul class="toolbar-dropdown">
                         <li class="sub-menu-user">
-                            <!--
-                            <div class="user-ava">
-                                <img src="{{asset('SiteP/assets')}}/images/account/user-ava-sm.jpg" alt="Tony Stark">
-                            </div>
-                            -->
                             <div class="user-info">
                                 <h6 class="user-name">{{auth()->user()->name}}</h6>
                             </div>

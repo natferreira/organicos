@@ -38,7 +38,11 @@ class User extends Authenticatable
         return $this->roles->contains('name', $roles);
     }
 
-    public function endereco (){
+    public function endereco(){
         return $this->hasOne(\App\Models\Endereco::class);
+    }
+
+    public function pedidos(){
+        return $this->hasMany(\App\Models\Pedido::class);
     }
 }
