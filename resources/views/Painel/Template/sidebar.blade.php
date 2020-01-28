@@ -25,10 +25,34 @@
         <!-- Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library -->
         <li class="nav-item">
-        <a href="pages/widgets.html" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
+        <a href="{{route('Painel.Principal.index')}}" class="nav-link">
+            <i class="fas fa-box-open"></i>
+            <p>
+            Encomendas
+            </p>
+        </a>
+        </li>    
+        <li class="nav-item">
+        <a href="{{route('produtosPainel.index')}}" class="nav-link">
+            <i class="fas fa-shopping-basket"></i>
             <p>
             Cadastrar Produtos
+            </p>
+        </a>
+        </li>
+        <li class="nav-item">
+        <a href="{{route('categorias.index')}}" class="nav-link">
+            <i class="fas fa-tags"></i>
+            <p>
+            Cadastrar Categorias
+            </p>
+        </a>
+        </li>
+        <li class="nav-item">
+        <a href="{{route('usuarios.index')}}" class="nav-link">
+            <i class="fas fa-users"></i>
+            <p>
+            Usuários
             </p>
         </a>
         </li>

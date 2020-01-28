@@ -56,14 +56,18 @@
         <div class="column">
             <a class="btn btn-outline-secondary" href="{{route('Site.Produtos.index')}}"><i class="icon-arrow-left"></i>&nbsp;Voltar para a lista de produtos</a>
         </div>
-        @if(auth()->check())
-        <div class="column">
-            <a class="btn btn-success" href="{{ route('endereco.index') }}">Finalizar Encomenda</a>
-        </div>
+        @if($valorInsuficiente=='N')
+            @if(auth()->check())
+            <div class="column">
+                <a class="btn btn-success" href="{{ route('endereco.index') }}">Finalizar Encomenda</a>
+            </div>
+            @else
+            <div class="column">
+                <a class="btn btn-success" href="{{ route('login') }}">Finalizar Encomenda</a>
+            </div>
+            @endif
         @else
-        <div class="column">
-            <a class="btn btn-success" href="{{ route('login') }}">Finalizar Encomenda</a>
-        </div>
+        <p style="font-size:30px; padding-top:10px;">Valor Mínimo para encomenda: R$50,00</p>
         @endif
 
     </div>

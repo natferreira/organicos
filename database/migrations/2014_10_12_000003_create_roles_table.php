@@ -35,6 +35,8 @@ class CreateRolesTable extends Migration
                 ->on('users')
                 ->onDelete('cascade');
         });
+
+        DB::statement("ALTER TABLE roles AUTO_INCREMENT = 0;");
     }
 
     /**

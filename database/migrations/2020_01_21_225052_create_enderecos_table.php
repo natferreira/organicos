@@ -47,6 +47,8 @@ class CreateEnderecosTable extends Migration
             //----------------------------------------------------
             $table->timestamps();
         });
+
+        DB::statement("ALTER TABLE enderecos AUTO_INCREMENT = 0;");
     }
 
     /**

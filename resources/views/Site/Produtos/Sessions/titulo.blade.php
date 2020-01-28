@@ -9,7 +9,7 @@
                 <li><a href="index.html">Home</a>
                 </li>
                 <li class="separator">&nbsp;</li>
-                <li>Shop Grid No Sidebar</li>
+                <li>Nossos Produtos</li>
             </ul>
         </div>
     </div>

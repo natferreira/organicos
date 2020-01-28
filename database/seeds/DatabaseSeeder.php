@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call('RolesTableSeeder');
         $this->call('PermissionsTableSeeder');
         $this->call('UserTableSeeder');
+        $this->call('CategoriasTableSeeder');
         $this->call('ProdutosTableSeeder');
         $this->call('EstadosTableSeeder');
         $this->call('CidadesTableSeeder');
@@ -134,6 +135,21 @@ class UserTableSeeder extends Seeder {
 
 }
 
+class CategoriasTableSeeder extends Seeder {
+    
+    public function run()
+    {
+        DB::table('categorias')->delete();
+
+        $categoria = \App\Models\Categoria::create([
+            'nome' => 'Frutas'
+        ]);
+        $categoria = \App\Models\Categoria::create([
+            'nome' => 'Legumes'
+        ]);
+    }
+}
+
 class ProdutosTableSeeder extends Seeder {
     
     public function run()
@@ -146,6 +162,7 @@ class ProdutosTableSeeder extends Seeder {
             'preco'=> 10.90,
             'imagem'=>'01',
             'quantidade'=>20,
+            'categoria_id' => 1,
         ]);
 
         $produto = \App\Models\Produto::create([
@@ -154,6 +171,7 @@ class ProdutosTableSeeder extends Seeder {
             'preco'=> 12.90,
             'imagem'=>'05',
             'quantidade'=>30,
+            'categoria_id' => 1,
         ]);
 
         $produto = \App\Models\Produto::create([
@@ -162,6 +180,7 @@ class ProdutosTableSeeder extends Seeder {
             'preco'=> 15.90,
             'imagem'=>'07',
             'quantidade'=>30,
+            'categoria_id' => 2,
         ]);
 
         $produto = \App\Models\Produto::create([
@@ -170,6 +189,7 @@ class ProdutosTableSeeder extends Seeder {
             'preco'=> 16.90,
             'imagem'=>'08',
             'quantidade'=>30,
+            'categoria_id' => 2,
         ]);
     }
 }

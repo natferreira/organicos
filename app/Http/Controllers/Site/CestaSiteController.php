@@ -19,8 +19,13 @@ class CestaSiteController extends Controller
     {
         $cesta = new Cesta;
         $produtos = $cesta->getItens();
-        //dd($produtos);
-        return view('Site.Cesta.index', compact('cesta','produtos'));
+        if($cesta->total()<50){
+            $valorInsuficiente = 'S';
+        }
+        else{
+            $valorInsuficiente = 'N';
+        }
+        return view('Site.Cesta.index', compact('cesta','produtos','valorInsuficiente'));
     }
 
     public function limpar(Cesta $cesta)

@@ -38,6 +38,8 @@ class CreatePermissionsTable extends Migration
                 ->on('roles')
                 ->onDelete('cascade');
         });
+
+        DB::statement("ALTER TABLE permissions AUTO_INCREMENT = 0;");
     }
 
     //------------------------------------------------------------------------------------------------------------------

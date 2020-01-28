@@ -20,8 +20,15 @@ class CreateProdutosTable extends Migration
             $table->decimal('preco',10,2)->nullable();
             $table->string('imagem')->nullable();
             $table->integer('quantidade');
+            $table->unsignedInteger('categoria_id');
+            //----------------------------------------------------
+            $table->foreign('categoria_id')
+                ->references('id')
+                ->on('categorias')
+                ->onDelete('cascade');
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE produtos AUTO_INCREMENT = 0;");
     }
 
     /**

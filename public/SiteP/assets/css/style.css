@@ -425,7 +425,7 @@ body {
 
 a {
     color: #fa6800;
-    text-decoration: underline
+    text-decoration: none
 }
 
 a:hover {
@@ -3478,7 +3478,7 @@ button:focus {
 }
 
 .pagination {
-    display: table;
+    padding-top:30px;
     width: 100%;
     border-top: 1px solid #e1e7ec
 }

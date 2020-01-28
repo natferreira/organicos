@@ -15,7 +15,7 @@ class ProdutosSiteController extends Controller
 
     public function index(Produto $produto)
     {
-        $produtos = $produto->all();
+        $produtos = $produto->paginate(20);
         return view('Site.Produtos.index', compact('produtos'));
     }
 }

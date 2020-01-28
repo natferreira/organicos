@@ -46,9 +46,12 @@ Route::group(['namespace'=>'Painel'], function (){
 
 /*
  * ROTAS DE CRUD:
- * .create, .store, .edit, .update, .show, .delete
+ * .create, .store, .edit, .update, .show, .destroy
  */
 Route::resource('produtosCesta','ProdutosCestaController');
 Route::resource('endereco', 'Site\EnderecoController');
+Route::resource('produtosPainel', 'Painel\ProdutosPainelController');
+Route::resource('categorias', 'Painel\CategoriaController');
+Route::resource('usuarios', 'Painel\UsuariosController');
 
 

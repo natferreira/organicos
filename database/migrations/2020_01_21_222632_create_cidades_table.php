@@ -18,6 +18,8 @@ class CreateCidadesTable extends Migration
             $table->string('nome');
             $table->timestamps();
         });
+
+        DB::statement("ALTER TABLE cidades AUTO_INCREMENT = 0;");
     }
 
     /**

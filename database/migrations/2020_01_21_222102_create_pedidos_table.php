@@ -32,6 +32,7 @@ class CreatePedidosTable extends Migration
             //----------------------------------------------------
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE pedidos AUTO_INCREMENT = 0;");
     }
 
     /**

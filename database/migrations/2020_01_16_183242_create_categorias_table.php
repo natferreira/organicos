@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBairrosTable extends Migration
+class CreateCategoriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateBairrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('bairros', function (Blueprint $table) {
+        Schema::create('categorias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
             $table->timestamps();
         });
-        DB::statement("ALTER TABLE bairros AUTO_INCREMENT = 0;");
+        DB::statement("ALTER TABLE categorias AUTO_INCREMENT = 0;");
     }
 
     /**
@@ -28,6 +28,6 @@ class CreateBairrosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bairros');
+        Schema::dropIfExists('categorias');
     }
 }

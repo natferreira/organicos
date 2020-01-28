@@ -54,7 +54,8 @@ class PainelController extends Controller
             $bairros = $this->bairro->all();
             $cidades = $this->cidade->all();
             $total = 0;
-            return view('Painel.Principal.index', compact('pedidoAgrupado','enderecos','produtos','users','bairros','cidades','total'));
+            $titulo = "Painel de Controle";
+            return view('Painel.Principal.index', compact('pedidoAgrupado','enderecos','produtos','users','bairros','cidades','total','titulo'));
         }
         return redirect()->route('Site.Principal.index');
     }

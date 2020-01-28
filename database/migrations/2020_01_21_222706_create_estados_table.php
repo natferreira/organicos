@@ -19,6 +19,8 @@ class CreateEstadosTable extends Migration
             $table->string('sigla',2);
             $table->timestamps();
         });
+
+        DB::statement("ALTER TABLE estados AUTO_INCREMENT = 0;");
     }
 
     /**
