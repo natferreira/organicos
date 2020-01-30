@@ -9,6 +9,7 @@
         <a class="hidden-md-down" href="#"></i>&nbsp;{{auth()->user()->name}}</a>
         <a class="hidden-md-down" href="#"></i>&nbsp;MEU PERFIL</a>
         <a class="hidden-md-down" href="#"></i>&nbsp;MEUS PEDIDOS</a>
+        
         <a class="hidden-md-down" href="{{route('logout')}}"></i>&nbsp;SAIR&nbsp;&nbsp;&nbsp;&nbsp;</a>
         
     @else

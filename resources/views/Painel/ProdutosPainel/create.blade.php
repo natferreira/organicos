@@ -1,123 +1,56 @@
-@extends('Site.Template.index')
+@extends('Painel.Template.index')
 
 @section('content')
 
-@includeIf('Site.Encomenda.Endereco.Sessions.titulo')
-
-<!-- Start Checkout Content -->
-<div class="container padding-top-1x padding-bottom-3x">
-    <div class="row">
-        <!-- Start Checkout Address -->
-        <div class="col-lg-9">
-            <div class="checkout-steps">
-                <a href="checkout-review.html">4. Revisão</a>
-                <a href="checkout-payment.html"><span class="angle"></span>3. Pagamento</a>
-                <a href="checkout-shipping.html"><span class="angle"></span>2. Frete</a>
-                <a class="active" href="checkout-address.html"><span class="angle"></span>1. Endereço</a>
-            </div>
-            <h4>Endereço de entrega</h4>
-            <hr class="padding-bottom-1x">
-            
-            <form action="{{ route('endereco.store') }}" method="POST">
-                {{ csrf_field() }}
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="checkout-fn">Logradouro</label>
-                            <input class="form-control" type="text" id="checkout-fn" name="rua">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="checkout-ln">Número</label>
-                            <input class="form-control" type="text" id="checkout-ln" name="numero">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="checkout-email">Complemento</label>
-                            <input class="form-control" type="text" id="checkout-email" name="complemento">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="checkout-country">Bairro</label>
-                            <select class="form-control" id="checkout-country" name="bairro_id">
-                                <option value="" selected>Selecione o Bairro</option>
-                                @foreach($bairros as $bairro)
-                                    <option value="{{$bairro->id}}">{{$bairro->nome}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="checkout-city">Cidade</label>
-                            <select class="form-control" id="checkout-city" name="cidade_id">
-                                <option value="" selected>Selecione a Cidade</option>
-                                @foreach($cidades as $cidade)
-                                    <option value="{{$cidade->id}}">{{$cidade->nome}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="checkout-country">Estado</label>
-                            <select class="form-control" id="checkout-country" name="estado_id">
-                            @foreach($estados as $estado)
-                                <option value="{{$estado->id}}" selected>{{$estado->nome}}</option>
-                            @endforeach
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="checkout-fn">Telefone 1</label>
-                            <input class="form-control" type="text" id="checkout-fn" name="telefone1">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="checkout-ln">Telefone 2</label>
-                            <input class="form-control" type="text" id="checkout-ln" name="telefone2">
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="checkout-footer">
-                    <div class="column"><a class="btn btn-outline-secondary" href="cart.html"><i class="icon-arrow-left"></i><span class="hidden-xs-down">&nbsp;Back To Cart</span></a></div>
-                    <div class="column"><button type="submit" class="btn btn-primary" href=""><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></button></div>
-                </div>
-            </form>
-        </div>
-        <!-- End Checkout Address -->
-        <!-- Start Sidebar -->
-        <div class="col-lg-3 order-sum">
-            <aside class="sidebar">
-                <div class="hidden-lg-up"></div>
-                <!-- Start Promo Banner -->
-                <section class="promo-box hidden-md-down site-promo"><span class="overlay-dark site-promo-span"></span>
-                    <div class="promo-box-content text-center padding-top-2x padding-bottom-2x">
-                        <h4 class="text-light text-thin text-shadow">Só aceitamos encomendas acima de R$50,00</h4>
-                        <br>
-                        <h4 class="text-light text-thin text-shadow">FRETE GRÁTIS</h4>
-                        <br>
-                        <h4 class="text-light text-thin text-shadow">Entrega somente às terças-feiras!</h4>
-                        <br>
-                    </div>
-                </section>
-                <!-- End Promo Banner -->
-            </aside>
-        </div>
+<div class="card card-primary">
+    <div class="card-header">
+    <h3 class="card-title">Novo Produto</h3>
     </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form role="form" action="{{route('produtosPainel.store')}}" method="POST" enctype="multipart/form-data">
+    {{ csrf_field() }}
+    <div class="card-body">
+        <div class="form-group">
+        <label for="exampleInputEmail1">Nome</label>
+        <input type="text" class="form-control" placeholder="Nome" name="nome">
+        </div>
+        <div class="form-group">
+        <label>Descrição</label>
+        <textarea class="form-control" rows="3" placeholder="Faça uma rápida e objetiva descrição..." name="descricao"></textarea>
+        </div>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Preço</label>
+        <input type="text" class="form-control" placeholder="Preço" name="preco">
+        </div>
+        
+        <div class="form-group">
+        <label for="exampleFormControlFile1">Imagem</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imagem">
+        </div>
+
+        <div class="form-group">
+        <label for="exampleInputEmail1">Quantidade</label>
+        <input type="text" class="form-control" placeholder="Quantidade" name="quantidade">
+        </div>        
+
+        <div class="form-group">
+            <label>Categoria</label>
+            <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true" name="categoria_id">
+            <option selected="selected" value="">Escolha uma categoria</option>
+            @foreach($categorias as $categoria)
+            <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+            @endforeach
+            </select>
+        </div>
+
+    </div>
+    <!-- /.card-body -->
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Criar</button>
+    </div>
+    </form>
 </div>
-<!-- End Product Content -->
 
 @endsection

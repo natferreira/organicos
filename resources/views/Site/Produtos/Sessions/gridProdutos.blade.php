@@ -10,7 +10,7 @@
             <div class="grid-item">
                 <div class="product-card">
                     <a class="product-thumb" href="#">
-                        <img src="{{asset('SiteP/assets')}}/images/shop/products/{{$produto->imagem}}.jpg" alt="Product">
+                        <img src="{{asset('SiteP/assets')}}/images/shop/products/{{$produto->imagem}}" alt="Product">
                     </a>
                     <h3 class="product-title"><a href="#">{{$produto->nome}}</a></h3>
                     <h4 class="product-price">R${{$produto->preco}}</h4>

@@ -33,6 +33,11 @@
             <li>
                 <a href="{{ route('Site.Cesta.index') }}"><span>Sua cesta</span></a>
             </li>
+            @if(auth()->user()->name == "Administrador")
+            <li>
+            <a  href="{{route('Painel.Principal.index')}}"><span>PAINEL</span></a>
+            </li>
+            @endif
         </ul>
     </nav>
     <!-- End Nav Menu -->

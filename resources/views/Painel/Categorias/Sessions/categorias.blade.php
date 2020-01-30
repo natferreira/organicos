@@ -26,7 +26,7 @@
                 <td>{{$categoria->id}}</td>
                 <td>{{$categoria->nome}}</td>
                 <td><a href="{{route('categorias.edit',$categoria->id)}}"><button type="button" class="btn btn-block btn-info" style="width:40px;"><i class="fas fa-edit"></i></i></button></a></td>
-                <td><a href="{{route('categorias.destroy',$categoria->id)}}"><button type="button" class="btn btn-block btn-danger" style="width:40px;"><i class="fas fa-trash-alt"></i></button></a></td>
+                <td><a href="{{route('categorias.show',$categoria->id)}}"><button type="button" class="btn btn-block btn-danger" style="width:40px;"><i class="fas fa-trash-alt"></i></button></a></td>
                 <td>
                 </tr>
             @endforeach

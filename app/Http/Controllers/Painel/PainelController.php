@@ -13,6 +13,7 @@ use App\Models\Produto;
 use App\Models\Bairro;
 use App\Models\Cidade;
 
+
 class PainelController extends Controller
 {
     protected $endereco;
@@ -47,7 +48,9 @@ class PainelController extends Controller
         if(Gate::allows("View-Painel"))
         {
             $pedidos = $this->pedido->all();
-            $pedidoAgrupado = $pedidos->groupBy('user_id','created_at');
+            $pedidoAgrupado = $pedidos->groupBy(function($val) {
+                return $val->created_at->format('Y-m-d H:i:s');
+            })->toArray();
             $enderecos = $this->endereco->all();
             $produtos = $this->produto->all();
             $users = $this->user->all();

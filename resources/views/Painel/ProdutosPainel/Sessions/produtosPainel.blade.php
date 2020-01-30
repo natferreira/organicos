@@ -36,7 +36,7 @@
                 <td>{{$produto->quantidade}}</td>
                 <td>{{$categorias[$produto->categoria_id - 1]->nome}}</td>
                 <td><a href="{{route('produtosPainel.edit',$produto->id)}}"><button type="button" class="btn btn-block btn-info" style="width:40px;"><i class="fas fa-edit"></i></i></button></a></td>
-                <td><a href="{{route('produtosPainel.destroy',$produto->id)}}"><button type="button" class="btn btn-block btn-danger" style="width:40px;"><i class="fas fa-trash-alt"></i></button></a></td>
+                <td><a href="{{route('produtosPainel.show',$produto->id)}}"><button type="button" class="btn btn-block btn-danger" style="width:40px;"><i class="fas fa-trash-alt"></i></button></a></td>
                 <td>
                 </tr>
             @endforeach

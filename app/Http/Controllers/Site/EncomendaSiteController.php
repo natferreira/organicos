@@ -11,6 +11,7 @@ use App\Models\Endereco;
 use App\Models\Bairro;
 use App\Models\Cidade;
 use App\Models\Estado;
+use App\Models\Produto;
 
 class EncomendaSiteController extends Controller
 {
@@ -19,6 +20,7 @@ class EncomendaSiteController extends Controller
     protected $bairro;
     protected $cidade;
     protected $estado;
+    protected $produto;
 
     public function __construct
     (
@@ -26,7 +28,8 @@ class EncomendaSiteController extends Controller
         Endereco            $endereco,
         Bairro              $bairro,
         Cidade              $cidade,
-        Estado              $estado
+        Estado              $estado,
+        Produto             $produto
     )
     {
         $this->middleware('auth');
@@ -36,6 +39,7 @@ class EncomendaSiteController extends Controller
         $this->bairro       = $bairro;
         $this->cidade       = $cidade;
         $this->estado       = $estado;
+        $this->produto      = $produto;
     }
 
     public function frete()
@@ -79,6 +83,12 @@ class EncomendaSiteController extends Controller
             
             $this->pedido->create($dado);
         
+        }
+        foreach($dados as $dado)
+        {
+            $produto = $this->produto->find($dado["produto_id"]);
+            $novaQtd = $produto["quantidade"] - $dado["quantidade"];
+            $update = $produto->update(['quantidade' => $novaQtd,]);
         }
         $cesta->limparCesta();
         return view('Site.Encomenda.Conclusao.index');

@@ -44,7 +44,12 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        if(Gate::allows("View-Painel"))
+        {
+            $titulo = "Nova Categoria";
+            return view('Painel.Categorias.create', compact('titulo'));
+        }
+        return redirect()->route('Site.Principal.index');
     }
 
     /**
@@ -55,7 +60,21 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(Gate::allows("View-Painel"))
+        {
+            $dataForm = $request->all();
+            $insert = $this->categoria->create($dataForm);
+            if($insert)
+            {
+                return redirect()->route('categorias.index');
+            }
+            else
+            {
+                return redirect()->route('categorias.create');
+            }
+        }
+        return redirect()->route('Site.Principal.index');
+        
     }
 
     /**
@@ -66,7 +85,13 @@ class CategoriaController extends Controller
      */
     public function show($id)
     {
-        //
+        if(Gate::allows("View-Painel"))
+        {
+            $categoria = $this->categoria->find($id);
+            $titulo = "Excluir Categoria";
+            return view('Painel.Categorias.delete', compact('titulo','categoria'));
+        }
+        return redirect()->route('Site.Principal.index');
     }
 
     /**
@@ -77,7 +102,13 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(Gate::allows("View-Painel"))
+        {
+            $categoria = $this->categoria->find($id);
+            $titulo = "Editar Categoria";
+            return view('Painel.Categorias.update', compact('titulo','categoria'));
+        }
+        return redirect()->route('Site.Principal.index');
     }
 
     /**
@@ -89,7 +120,20 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(Gate::allows("View-Painel"))
+        {
+            $dataForm = $request->all();
+            $categoria = $this->categoria->find($id);
+            $update = $categoria->update($dataForm);
+            if($update)
+            {
+                return redirect()->route('categorias.index');
+            }
+            else
+            {
+                return redirect()->route('categorias.edit',$id);
+            }
+        }
     }
 
     /**
@@ -100,6 +144,15 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categoria = $this->categoria->find($id);
+        $delete = $categoria->delete();
+        if($delete)
+        {
+            return redirect()->route('categorias.index');
+        }
+        else
+        {
+            return redirect()->route('categorias.show',$id);
+        }
     }
 }
