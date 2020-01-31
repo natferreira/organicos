@@ -16,11 +16,6 @@
                     <a href="index.html"><span>Home</span></a>
                     <span class="sub-menu-toggle"></span>
                 </span>
-                <ul class="offcanvas-submenu">
-                    <li class="active"><a href="index.html">Home Version 1</a></li>
-                    <li><a href="index-2.html">Home Version 2</a></li>
-                    <li><a href="index-3.html">Home Version 3</a></li>
-                </ul>
             </li>
             <li class="has-children">
                 <span>

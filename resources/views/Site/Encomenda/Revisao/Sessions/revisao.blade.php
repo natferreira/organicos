@@ -24,7 +24,7 @@
                     <tr>
                         <td>
                             <div class="product-item">
-                                <a class="product-thumb" href="shop-single-1.html"><img src="{{asset('SiteP/assets')}}/images/shop/products/{{$produto['item']->imagem}}.jpg" alt="Product"></a>
+                                <a class="product-thumb" href="shop-single-1.html"><img src="{{asset('SiteP/assets')}}/images/shop/products/{{$produto['item']->imagem}}" alt="Product"></a>
                                 <div class="product-info">
                                     <h4 class="product-title">
                                         <a href="shop-single-1.html">{{$produto['item']->nome}}</a>

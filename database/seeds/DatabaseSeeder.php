@@ -160,7 +160,7 @@ class ProdutosTableSeeder extends Seeder {
             'nome'=>'Laranja Lima',
             'descricao'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
             'preco'=> 10.90,
-            'imagem'=>'01',
+            'imagem'=>'01.jpg',
             'quantidade'=>20,
             'categoria_id' => 1,
         ]);
@@ -169,7 +169,7 @@ class ProdutosTableSeeder extends Seeder {
             'nome'=>'Banana Prata',
             'descricao'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
             'preco'=> 12.90,
-            'imagem'=>'05',
+            'imagem'=>'05.jpg',
             'quantidade'=>30,
             'categoria_id' => 1,
         ]);
@@ -178,7 +178,7 @@ class ProdutosTableSeeder extends Seeder {
             'nome'=>'Morango',
             'descricao'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
             'preco'=> 15.90,
-            'imagem'=>'07',
+            'imagem'=>'07.jpg',
             'quantidade'=>30,
             'categoria_id' => 2,
         ]);
@@ -187,7 +187,7 @@ class ProdutosTableSeeder extends Seeder {
             'nome'=>'Cenoura',
             'descricao'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
             'preco'=> 16.90,
-            'imagem'=>'08',
+            'imagem'=>'08.jpg',
             'quantidade'=>30,
             'categoria_id' => 2,
         ]);

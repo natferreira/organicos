@@ -51,6 +51,7 @@ class PainelController extends Controller
             $pedidoAgrupado = $pedidos->groupBy(function($val) {
                 return $val->created_at->format('Y-m-d H:i:s');
             })->toArray();
+            krsort($pedidoAgrupado);
             $enderecos = $this->endereco->all();
             $produtos = $this->produto->all();
             $users = $this->user->all();

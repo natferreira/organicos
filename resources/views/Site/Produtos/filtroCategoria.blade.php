@@ -1,3 +1,9 @@
+@extends('Site.Template.index')
+
+@section('content')
+
+@includeIf('Site.Produtos.Sessions.titulo')
+
 <!-- End Page Title -->
 <!-- Start Page Content -->
 <div class="container padding-top-1x padding-bottom-3x">
@@ -38,3 +44,5 @@
     
 </div>
 <!-- End Page Content -->
+
+@endsection

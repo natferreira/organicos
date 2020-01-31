@@ -25,6 +25,7 @@ $this->get('limpar-cesta', 'Site\CestaSiteController@limpar')->name('limpar.cest
 Route::group(['namespace'=>'Site'], function () {
     $this->get('/', 'SiteController@index')->name('Site.Principal.index');
     $this->get('/nossosprodutos', 'ProdutosSiteController@index')->name('Site.Produtos.index');
+    $this->get('/nossosprodutos/{categoria}', 'ProdutosSiteController@filtroCategoria')->name('Site.Produtos.filtroCategoria');
     $this->get('/suacesta', 'CestaSiteController@index')->name('Site.Cesta.index');    
     $this->get('/suacesta/frete', 'EncomendaSiteController@frete')->name('Site.Encomenda.Frete.index');
     $this->get('/suacesta/pagamento', 'EncomendaSiteController@pagamento')->name('Site.Encomenda.Pagamento.index');
@@ -53,5 +54,9 @@ Route::resource('endereco', 'Site\EnderecoController');
 Route::resource('produtosPainel', 'Painel\ProdutosPainelController');
 Route::resource('categorias', 'Painel\CategoriaController');
 Route::resource('usuarios', 'Painel\UsuariosController');
+Route::resource('perfil', 'Site\PerfilSiteController');
+Route::resource('meusPedidos', 'Site\PedidosSiteController');
+Route::resource('bairros', 'Painel\BairroController');
+Route::resource('cidades', 'Painel\CidadeController');
 
 

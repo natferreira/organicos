@@ -19,6 +19,7 @@ class CreatePedidosTable extends Migration
             $table->integer('quantidade');
             $table->decimal('preco',10,2);
             $table->unsignedInteger('user_id');
+            $table->string('cancelado')->default('N');
             //----------------------------------------------------
             $table->foreign('produto_id')
                 ->references('id')

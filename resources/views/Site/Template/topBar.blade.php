@@ -7,8 +7,8 @@
     <div class="topbar-column">
     @if(auth()->check())
         <a class="hidden-md-down" href="#"></i>&nbsp;{{auth()->user()->name}}</a>
-        <a class="hidden-md-down" href="#"></i>&nbsp;MEU PERFIL</a>
-        <a class="hidden-md-down" href="#"></i>&nbsp;MEUS PEDIDOS</a>
+        <a class="hidden-md-down" href="{{ route('perfil.index') }}"></i>&nbsp;MEU PERFIL</a>
+        <a class="hidden-md-down" href="{{ route('meusPedidos.index') }}"></i>&nbsp;MEUS PEDIDOS</a>
         
         <a class="hidden-md-down" href="{{route('logout')}}"></i>&nbsp;SAIR&nbsp;&nbsp;&nbsp;&nbsp;</a>
         
@@ -16,8 +16,8 @@
         <a class="hidden-md-down" href="{{route('login')}}"></i>&nbsp;ENTRAR</a>
         <a class="hidden-md-down" href="{{route('register')}}"></i>&nbsp;CADASTRE-SE&nbsp;&nbsp;&nbsp;&nbsp;</a>
     @endif
-        <a class="social-button sb-facebook shape-none sb-dark soc-border" href="#" target="_blank"><i class="socicon-facebook"></i></a>
-        <a class="social-button sb-instagram shape-none sb-dark" href="#" target="_blank"><i class="socicon-instagram"></i></a>
+        <a class="social-button sb-facebook shape-none sb-dark soc-border" href="https://www.facebook.com/somosorganicosdelivery/" target="_blank"><i class="socicon-facebook"></i></a>
+        <a class="social-button sb-instagram shape-none sb-dark" href="https://www.instagram.com/somosorganicosdelivery/" target="_blank"><i class="socicon-instagram"></i></a>
     </div>
 </div>
 <!-- End TopBar -->

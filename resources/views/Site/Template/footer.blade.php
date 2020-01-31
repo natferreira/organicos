@@ -10,10 +10,10 @@
                         <p class="text-white"><i class="fa fa-phone"></i> +55 21 99888 8888</p>
                         <p class="text-white"><i class="fa fa-envelope-o"></i> contato@somosorganicos.com</p>
                         <p class="text-white">ENTREGAS REALIZADAS SOMENTE AS TERÇAS-FEIRAS!</p>
-                        <a class="social-button shape-circle sb-facebook sb-light-skin" href="#">
+                        <a class="social-button shape-circle sb-facebook sb-light-skin" href="https://www.facebook.com/somosorganicosdelivery/" target="_blank">
                             <i class="socicon-facebook"></i>
                         </a>
-                        <a class="social-button shape-circle sb-instagram sb-light-skin" href="#">
+                        <a class="social-button shape-circle sb-instagram sb-light-skin" href="https://www.instagram.com/somosorganicosdelivery/" target="_blank">
                             <i class="socicon-instagram"></i>
                         </a>
                     </section>

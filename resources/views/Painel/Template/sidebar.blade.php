@@ -49,6 +49,22 @@
         </a>
         </li>
         <li class="nav-item">
+        <a href="{{route('bairros.index')}}" class="nav-link">
+            <i class="fas fa-map-marked-alt"></i>
+            <p>
+             Cadastrar Bairros
+            </p>
+        </a>
+        </li>
+        <li class="nav-item">
+        <a href="{{route('cidades.index')}}" class="nav-link">
+            <i class="fas fa-city"></i>
+            <p>
+            Cadastrar Cidades
+            </p>
+        </a>
+        </li>
+        <li class="nav-item">
         <a href="{{route('usuarios.index')}}" class="nav-link">
             <i class="fas fa-users"></i>
             <p>
@@ -56,7 +72,14 @@
             </p>
         </a>
         </li>
-        
+        <li class="nav-item">
+        <a href="{{route('categorias.index')}}" class="nav-link">
+            <i class="fas fa-images"></i>
+            <p>
+            Slides
+            </p>
+        </a>
+        </li>   
     </ul>
     </nav>
     <!-- /.sidebar-menu -->
