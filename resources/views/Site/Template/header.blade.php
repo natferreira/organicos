@@ -1,8 +1,8 @@
 <!-- Start NavBar -->
 <header class="navbar navbar-sticky">
     <!-- Start Search -->
-    <form class="site-search" method="get">
-        <input type="text" name="site_search" placeholder="Type to search...">
+    <form class="site-search" action="{{route('resultado.pesquisa')}}" method="get">
+        <input type="text" name="site_search" placeholder="Pesquisar produto.">
         <div class="search-tools">
             <span class="clear-search">Clear</span>
             <span class="close-search"><i class="icon-cross"></i></span>
@@ -26,9 +26,6 @@
             </li>
             <li>
                 <a href="{{ route('Site.Produtos.index') }}"><span>Nossos Produtos</span></a>
-            </li>
-            <li>
-                <a href="#"><span>OFERTAS</span></a>
             </li>
             <li>
                 <a href="{{ route('Site.Cesta.index') }}"><span>Sua cesta</span></a>

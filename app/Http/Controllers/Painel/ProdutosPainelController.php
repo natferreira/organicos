@@ -77,15 +77,17 @@ class ProdutosPainelController extends Controller
                 if($avatar->getClientOriginalExtension() != 'jpg' && $avatar->getClientOriginalExtension() != 'jpeg' && $avatar->getClientOriginalExtension() != 'png'){
                     $error = "true";
                     //return back()->with('error', 'Só é aceito imagens em JPG, JPGE ou PNG!');
-                    $filenameAvatar = 'default.png';
+                    $filenameAvatar = 'default.jpg';
                 }else{
                     Image::make($avatar)->resize(200, 200)->save('SiteP/assets/images/shop/products/'.$filenameAvatar);
                 }
             }
             else{
-                $filenameAvatar = 'default.png';
+                $filenameAvatar = 'default.jpg';
             }
-            //dd($dataForm);
+
+            $this->validate($request, $this->produto->rules, $this->produto->messages);
+
             $insert = $this->produto->create([
                 'nome' => $dataForm['nome'],
                 'descricao' => $dataForm['descricao'],
@@ -161,14 +163,17 @@ class ProdutosPainelController extends Controller
                 if($avatar->getClientOriginalExtension() != 'jpg' && $avatar->getClientOriginalExtension() != 'jpeg' && $avatar->getClientOriginalExtension() != 'png'){
                     $error = "true";
                     //return back()->with('error', 'Só é aceito imagens em JPG, JPGE ou PNG!');
-                    $filenameAvatar = 'default.png';
+                    $filenameAvatar = 'default.jpg';
                 }else{
                     Image::make($avatar)->resize(200, 200)->save('SiteP/assets/images/shop/products/'.$filenameAvatar);
                 }
             }
             else{
-                $filenameAvatar = 'default.png';
+                $filenameAvatar = 'default.jpg';
             }
+
+            $this->validate($request, $this->produto->rulesUpdate, $this->produto->messages);
+
             $produto = $this->produto->find($id);
             $update = $produto->update([
                 'nome' => $dataForm['nome'],

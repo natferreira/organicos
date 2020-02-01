@@ -257,7 +257,7 @@
 }
 
 .offcanvas-menu ul li a:hover {
-    color: #fa6800
+    color: #C65543
 }
 
 .offcanvas-menu ul li.back-btn > a {
@@ -278,7 +278,7 @@
 }
 
 .offcanvas-menu ul li.active > a {
-    color: #fa6800
+    color: #C65543
 }
 
 .offcanvas-menu ul li.has-children > span {
@@ -292,7 +292,7 @@
 }
 
 .offcanvas-menu ul li.has-children.active > span > a {
-    color: #fa6800
+    color: #C65543
 }
 
 .offcanvas-menu ul li.has-children .sub-menu-toggle {

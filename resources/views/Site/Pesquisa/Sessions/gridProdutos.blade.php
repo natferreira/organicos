@@ -1,16 +1,12 @@
 <!-- End Page Title -->
 <!-- Start Page Content -->
 <div class="container padding-top-1x padding-bottom-3x">
-
-<div class="row" style="margin-bottom:20px;">
-@foreach($categorias as $categoria)
-<a href="{{route('Site.Produtos.filtroCategoria', $categoria->id)}}">
-<button class="btn btn-rounded btn-secondary" type="button">{{$categoria->nome}}</button>
-</a>
-@endforeach
-</div>
-
     <!-- Start Products Grid -->
+@if($produtos == null)
+    <div class="text-center">
+        <h4>Nenhum produto encontrado.</h4>
+    </div>
+@else
     <div class="isotope-grid cols-4">
         <div class="gutter-sizer"></div>
         <div class="grid-sizer"></div>
@@ -37,6 +33,6 @@
     <!-- Start Pagination -->
 
     {{$produtos->links()}}
-    
+@endif 
 </div>
 <!-- End Page Content -->

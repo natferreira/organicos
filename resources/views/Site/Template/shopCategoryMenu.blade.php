@@ -1,88 +1,61 @@
 <!-- Start Shop Category Menu -->
 <div class="offcanvas-container" id="shop-categories">
-    <div class="offcanvas-header">
-        <h3 class="offcanvas-title">Shop Categories</h3>
-    </div>
+    <a class="account-link" href="#">
+        <div class="user-ava">
+            <img src="{{asset('SiteP/assets')}}/images/logo.jpg" alt="Tony Stark">
+        </div>
+        <div class="user-info">
+            <h6 class="user-name">Somos Orgânicos</h6>
+        </div>
+    </a>
     <nav class="offcanvas-menu">
         <ul class="menu">
             <li class="has-children">
                 <span>
-                    <a href="shop-categories-1.html">Mobiles & Tablets</a>
-                    <span class="sub-menu-toggle"></span>
+                    <a href="{{route('Site.Principal.index')}}">Home</a>
                 </span>
-                <ul class="offcanvas-submenu">
-                    <li><a href="shop-grid-1.html">Mobile Phones</a></li>
-                    <li><a href="shop-grid-1.html">Tabs & Tablets</a></li>
-                    <li><a href="shop-grid-1.html">Game Devices</a></li>
-                    <li><a href="shop-grid-1.html">Accessories</a></li>
-                    <li><a href="shop-grid-1.html">View All</a></li>
-                </ul>
             </li>
             <li class="has-children">
                 <span>
-                    <a href="shop-categories-2.html">Laptops & Computers</a>
-                    <span class="sub-menu-toggle"></span>
+                    <a href="{{route('Site.Produtos.index')}}">Nossos Produtos</a>
                 </span>
-                <ul class="offcanvas-submenu">
-                    <li><a href="shop-grid-2.html">Laptops</a></li>
-                    <li><a href="shop-grid-2.html">Computers</a></li>
-                    <li><a href="shop-grid-2.html">PC SoftWare</a></li>
-                    <li><a href="shop-grid-2.html">Accessories</a></li>
-                    <li><a href="shop-grid-2.html">View All</a></li>
-                </ul>
             </li>
             <li class="has-children">
                 <span>
-                    <a href="shop-categories-3.html">Cameras & TV's</a>
-                    <span class="sub-menu-toggle"></span>
+                    <a href="{{route('Site.Cesta.index')}}">Sua Cesta</a>
                 </span>
-                <ul class="offcanvas-submenu">
-                    <li><a href="shop-grid-3.html">Cameras</a></li>
-                    <li><a href="shop-grid-3.html">Photos</a></li>
-                    <li><a href="shop-grid-3.html">TV's</a></li>
-                    <li><a href="shop-grid-3.html">Accessories</a></li>
-                    <li><a href="shop-grid-3.html">View All</a></li>
-                </ul>
+            </li>
+            @if(auth()->check())
+            <div class="offcanvas-header">
+                <h3 class="offcanvas-title">{{auth()->user()->name}}</h3>
+            </div>
+            <li class="has-children">
+                <span>
+                    <a href="{{route('perfil.index')}}">Meu Perfil</a>
+                </span>
             </li>
             <li class="has-children">
                 <span>
-                    <a href="shop-categories-1.html">Watches & Eyewear</a>
-                    <span class="sub-menu-toggle"></span>
+                    <a href="{{ route('meusPedidos.index') }}">Meus Pedidos</a>
                 </span>
-                <ul class="offcanvas-submenu">
-                    <li><a href="shop-list-1.html">Watches</a></li>
-                    <li><a href="shop-list-1.html">Jewellery</a></li>
-                    <li><a href="shop-list-1.html">Eyewear</a></li>
-                    <li><a href="shop-list-1.html">Accessories</a></li>
-                    <li><a href="shop-list-1.html">View All</a></li>
-                </ul>
             </li>
             <li class="has-children">
                 <span>
-                    <a href="shop-categories-2.html">Home Appliances</a>
-                    <span class="sub-menu-toggle"></span>
+                    <a href="{{ route('logout') }}">SAIR</a>
                 </span>
-                <ul class="offcanvas-submenu">
-                    <li><a href="shop-list-2.html">Washers & Dryers</a></li>
-                    <li><a href="shop-list-2.html">Air Conditioners</a></li>
-                    <li><a href="shop-list-2.html">Sewing machines</a></li>
-                    <li><a href="shop-list-2.html">Accessories</a></li>
-                    <li><a href="shop-list-2.html">View All</a></li>
-                </ul>
+            </li>
+            @else
+            <li class="has-children">
+                <span>
+                    <a href="{{ route('login') }}">ENTRAR</a>
+                </span>
             </li>
             <li class="has-children">
                 <span>
-                    <a href="shop-categories-3.html">Accessories</a>
-                    <span class="sub-menu-toggle"></span>
+                    <a href="{{ route('register') }}">CADASTRE-SE</a>
                 </span>
-                <ul class="offcanvas-submenu">
-                    <li><a href="shop-list-3.html">Memory Cards</a></li>
-                    <li><a href="shop-list-3.html">USB Flash Drives</a></li>
-                    <li><a href="shop-list-3.html">External HDD</a></li>
-                    <li><a href="shop-list-3.html">Accessories</a></li>
-                    <li><a href="shop-list-3.html">View All</a></li>
-                </ul>
             </li>
+            @endif
         </ul>
     </nav>
 </div>

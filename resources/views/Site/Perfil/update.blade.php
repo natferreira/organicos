@@ -7,6 +7,13 @@
 <!-- Start Checkout Content -->
 <div class="container padding-top-1x padding-bottom-3x">
     <div class="row">
+            @if(isset($errors) && count($errors)>0)
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $error)
+                        <p>{{$error}}</p>
+                    @endforeach
+                </div>
+            @endif
             <form action="{{ route('perfil.update', $endereco->id) }}" method="post">
             {{method_field('PUT')}}
             {{ csrf_field() }}

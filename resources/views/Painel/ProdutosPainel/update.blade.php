@@ -8,6 +8,15 @@
     </div>
     <!-- /.card-header -->
     <!-- form start -->
+
+    @if(isset($errors) && count($errors)>0)
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $error)
+                <p>{{$error}}</p>
+            @endforeach
+        </div>
+    @endif
+
     <form role="form" action="{{route('produtosPainel.update', $produto->id)}}" method="POST" enctype="multipart/form-data">
     {{method_field('PUT')}}
     {{ csrf_field() }}

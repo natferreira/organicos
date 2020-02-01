@@ -141,8 +141,10 @@ class PerfilSiteController extends Controller
                                           "telefone1" => $dataForm["telefone1"],
                                           "telefone2" => $dataForm["telefone2"]));
 
+        $this->validate($request, $this->endereco->rulesUpdate, $this->endereco->messages);
+        $this->validate($request, $this->user->rules);
+
         $endereco = $this->endereco->find($id);
-        //dd($dadosEndereco);
         $update = $endereco->update($dadosEndereco[0]);
         $usuario = $this->user->find(auth()->user()->id);
         $update2 = $usuario->update($dadosUser[0]);

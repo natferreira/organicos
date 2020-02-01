@@ -19,6 +19,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public $rules = [
+        'name'                  => 'max:100',
+        'email'                 => 'email|unique:users',
+    ];
+
     public function roles()
     {
         return $this->belongsToMany(\App\Models\Painel\Roles\Role::class);

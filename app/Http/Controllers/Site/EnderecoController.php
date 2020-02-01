@@ -84,6 +84,9 @@ class EnderecoController extends Controller
     {
         $dataForm = $request->all();
         $dataForm["user_id"] = auth()->user()->id;
+
+        $this->validate($request, $this->endereco->rules, $this->endereco->messages);
+
         $insert = $this->endereco->create($dataForm);
         if($insert)
         {
@@ -137,6 +140,9 @@ class EnderecoController extends Controller
     {
         $dataForm = $request->all();
         $dataForm["user_id"] = auth()->user()->id;
+
+        $this->validate($request, $this->endereco->rulesUpdate, $this->endereco->messages);
+
         $endereco = $this->endereco->find($id);
         $update = $endereco->update($dataForm);
         if($update)

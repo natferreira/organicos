@@ -17,6 +17,14 @@
             </div>
             <h4>Endereço de entrega</h4>
             <hr class="padding-bottom-1x">
+
+            @if(isset($errors) && count($errors)>0)
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $error)
+                        <p>{{$error}}</p>
+                    @endforeach
+                </div>
+            @endif
             
             <form action="{{ route('endereco.update',$endereco->id) }}" method="post">
             {{method_field('PUT')}}

@@ -6,6 +6,15 @@
     <div class="card-header">
     <h3 class="card-title">Novo Produto</h3>
     </div>
+
+    @if(isset($errors) && count($errors)>0)
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $error)
+                <p>{{$error}}</p>
+            @endforeach
+        </div>
+    @endif
+
     <!-- /.card-header -->
     <!-- form start -->
     <form role="form" action="{{route('produtosPainel.store')}}" method="POST" enctype="multipart/form-data">
@@ -13,15 +22,15 @@
     <div class="card-body">
         <div class="form-group">
         <label for="exampleInputEmail1">Nome</label>
-        <input type="text" class="form-control" placeholder="Nome" name="nome">
+        <input type="text" class="form-control" placeholder="Nome" name="nome" value="{{old('nome')}}">
         </div>
         <div class="form-group">
         <label>Descrição</label>
-        <textarea class="form-control" rows="3" placeholder="Faça uma rápida e objetiva descrição..." name="descricao"></textarea>
+        <textarea class="form-control" rows="3" placeholder="Faça uma rápida e objetiva descrição..." name="descricao">{{old('descricao')}}</textarea>
         </div>
         <div class="form-group">
         <label for="exampleInputEmail1">Preço</label>
-        <input type="text" class="form-control" placeholder="Preço" name="preco">
+        <input type="text" class="form-control" placeholder="Preço" name="preco" value="{{old('preco')}}">
         </div>
         
         <div class="form-group">
@@ -31,12 +40,12 @@
 
         <div class="form-group">
         <label for="exampleInputEmail1">Quantidade</label>
-        <input type="text" class="form-control" placeholder="Quantidade" name="quantidade">
+        <input type="text" class="form-control" placeholder="Quantidade" name="quantidade" value="{{old('quantidade')}}">
         </div>        
 
         <div class="form-group">
             <label>Categoria</label>
-            <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true" name="categoria_id">
+            <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true" name="categoria_id" value="{{old('categoria_id')}}">
             <option selected="selected" value="">Escolha uma categoria</option>
             @foreach($categorias as $categoria)
             <option value="{{$categoria->id}}">{{$categoria->nome}}</option>

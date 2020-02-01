@@ -17,6 +17,14 @@
             </div>
             <h4>Endereço de entrega</h4>
             <hr class="padding-bottom-1x">
+
+            @if(isset($errors) && count($errors)>0)
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $error)
+                        <p>{{$error}}</p>
+                    @endforeach
+                </div>
+            @endif
             
             <form action="{{ route('endereco.store') }}" method="POST">
                 {{ csrf_field() }}
@@ -24,13 +32,13 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-fn">Logradouro</label>
-                            <input class="form-control" type="text" id="checkout-fn" name="rua">
+                            <input class="form-control" type="text" id="checkout-fn" name="rua" value="{{old('rua')}}">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-ln">Número</label>
-                            <input class="form-control" type="text" id="checkout-ln" name="numero">
+                            <input class="form-control" type="text" id="checkout-ln" name="numero" value="{{old('numero')}}">
                         </div>
                     </div>
                 </div>
@@ -38,13 +46,13 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-email">Complemento</label>
-                            <input class="form-control" type="text" id="checkout-email" name="complemento">
+                            <input class="form-control" type="text" id="checkout-email" name="complemento" value="{{old('complemento')}}">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-country">Bairro</label>
-                            <select class="form-control" id="checkout-country" name="bairro_id">
+                            <select class="form-control" id="checkout-country" name="bairro_id" value="{{old('bairro_id')}}">
                                 <option value="" selected>Selecione o Bairro</option>
                                 @foreach($bairros as $bairro)
                                     <option value="{{$bairro->id}}">{{$bairro->nome}}</option>
@@ -57,7 +65,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-city">Cidade</label>
-                            <select class="form-control" id="checkout-city" name="cidade_id">
+                            <select class="form-control" id="checkout-city" name="cidade_id" value="{{old('cidade_id')}}">
                                 <option value="" selected>Selecione a Cidade</option>
                                 @foreach($cidades as $cidade)
                                     <option value="{{$cidade->id}}">{{$cidade->nome}}</option>
@@ -68,7 +76,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-country">Estado</label>
-                            <select class="form-control" id="checkout-country" name="estado_id">
+                            <select class="form-control" id="checkout-country" name="estado_id" value="{{old('estado_id')}}">
                             @foreach($estados as $estado)
                                 <option value="{{$estado->id}}" selected>{{$estado->nome}}</option>
                             @endforeach
@@ -80,13 +88,13 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-fn">Telefone 1</label>
-                            <input class="form-control" type="text" id="checkout-fn" name="telefone1">
+                            <input class="form-control" type="text" id="checkout-fn" name="telefone1" value="{{old('telefone1')}}">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="checkout-ln">Telefone 2</label>
-                            <input class="form-control" type="text" id="checkout-ln" name="telefone2">
+                            <input class="form-control" type="text" id="checkout-ln" name="telefone2" value="{{old('telefone2')}}">
                         </div>
                     </div>
                 </div>

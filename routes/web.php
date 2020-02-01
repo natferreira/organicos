@@ -31,6 +31,7 @@ Route::group(['namespace'=>'Site'], function () {
     $this->get('/suacesta/pagamento', 'EncomendaSiteController@pagamento')->name('Site.Encomenda.Pagamento.index');
     $this->get('/suacesta/revisao', 'EncomendaSiteController@revisao')->name('Site.Encomenda.Revisao.index');
     $this->get('/suacesta/conclusao', 'EncomendaSiteController@conclusao')->name('Site.Encomenda.Conclusao.index');
+    $this->get('/pesquisa', 'SiteController@pesquisa')->name('resultado.pesquisa');
 });
 
 
